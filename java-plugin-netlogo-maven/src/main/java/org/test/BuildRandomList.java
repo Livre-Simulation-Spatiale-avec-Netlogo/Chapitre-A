@@ -1,8 +1,11 @@
-package org.netlogo.extension.sample;
+package org.test;
 
 import org.nlogo.api.*;
+import java.util.Random;
 
 public class BuildRandomList extends DefaultReporter {
+
+    Random r = new Random();
     public Syntax getSyntax() {
         return Syntax.reporterSyntax(new int[]{Syntax.NumberType()},Syntax.ListType());
     }
@@ -18,7 +21,7 @@ public class BuildRandomList extends DefaultReporter {
         }
 
         for (int i = 0; i < n; i++) {
-            list.add(Double.valueOf(i));
+            list.add(Double.valueOf(r.nextDouble()));
         }
 
         return list.toLogoList();

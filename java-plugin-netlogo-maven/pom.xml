@@ -5,7 +5,7 @@
 
     <groupId>org.netlogo.extension</groupId>
     <packaging>jar</packaging>
-    <artifactId>sample-extension</artifactId>
+    <artifactId>my-extension</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -45,7 +45,7 @@
                     <archive>
                         <manifestEntries>
                             <Extension-Name>Sample</Extension-Name>
-                            <Class-Manager>org.netlogo.extension.sample.SampleExtension</Class-Manager>
+                            <Class-Manager>org.test.MyExtension</Class-Manager>
                             <NetLogo-Extension-API-Version>5.0</NetLogo-Extension-API-Version>
                         </manifestEntries>
                     </archive>

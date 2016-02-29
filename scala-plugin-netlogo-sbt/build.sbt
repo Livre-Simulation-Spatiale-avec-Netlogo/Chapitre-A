@@ -3,9 +3,9 @@ enablePlugins(org.nlogo.build.NetLogoExtension)
 
 scalaVersion := "2.9.3"
 
-netLogoExtName      := "scala-plugin-netlogo-sbt"
+netLogoExtName      := "my-extension"
 
-netLogoClassManager := "SampleScalaExtension"
+netLogoClassManager := "MyExtension"
 
 netLogoZipSources   := false
 

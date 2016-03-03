@@ -17,7 +17,7 @@ scalacOptions ++= Seq("-deprecation", "-unchecked", "-Xlint", "-Xfatal-warnings"
 netLogoTarget :=
   org.nlogo.build.NetLogoExtension.directoryTarget(baseDirectory.value)
 
-val netLogoJarURL = Option(System.getProperty("netlogo.jar.url")).getOrElse("http://ccl.northwestern.edu/netlogo/5.2/NetLogo.jar")
+val netLogoJarURL = Option(System.getProperty("netlogo.jar.url")).getOrElse("https://github.com/NetLogo/NetLogo/releases/download/5.3.0/NetLogo.jar")
 
 val netLogoJarOrDependency = {
   import java.io.File
@@ -25,7 +25,7 @@ val netLogoJarOrDependency = {
   if (netLogoJarURL.startsWith("file:"))
     Seq(unmanagedJars in Compile += new File(new URI(netLogoJarURL)))
   else
-    Seq(libraryDependencies += "org.nlogo" % "NetLogo" % "5.2.0" from netLogoJarURL)
+    Seq(libraryDependencies += "org.nlogo" % "NetLogo" % "5.3.0" from netLogoJarURL)
 }
 
 netLogoJarOrDependency

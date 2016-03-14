@@ -23,8 +23,8 @@ public class BuildRandomList extends DefaultReporter {
         for (int i = 0; i < n; i++) {
             list.add(Double.valueOf(r.nextDouble()));
         }
-
-        return list.toLogoList();
+        // Java autobox double into Double
+        return list;
 
     }
 

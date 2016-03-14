@@ -48,7 +48,6 @@ public class ComputeMean extends DefaultReporter{
         return average/numbers.size();
     }
 
-
     /* Utility method to safely cast LogoList into ArrayList<Double> */
     private LogoList getListOrNull(Argument args[]) throws ExtensionException, LogoException  {
         try {
@@ -68,12 +67,13 @@ public class ComputeMean extends DefaultReporter{
         try {
             Object[] objectArray = logoListNumbers.toArray();
             logoDouble = Arrays.copyOf(objectArray, objectArray.length, Double[].class);
-        }catch (ClassCastException e){}
+        }catch (ClassCastException e){
+            System.out.println("Cast Error, only numbers are supported here");
+        }
 
+        ArrayList<Double> numbers = new ArrayList<Double>(Arrays.asList(logoDouble));
 
-        ArrayList<Double> nunbers = new ArrayList<Double>(Arrays.asList(logoDouble));
-
-        return average(nunbers);
+        return average(numbers);
 
     }
 }
